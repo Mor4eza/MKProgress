@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
 class MKProgressViewController: UIViewController {
 
     var background: MKProgressBackgroundView = {

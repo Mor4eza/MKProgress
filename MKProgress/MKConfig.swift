@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
 public struct MKConfig {
     
     /**
