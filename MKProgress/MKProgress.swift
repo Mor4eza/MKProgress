@@ -14,6 +14,9 @@ public enum HudType: Int {
     case activityIndicator
     /// Circular animated progress HUD
     case radial
+    /// NVActivityIndicator instance
+
+    case nvActivityIndicator
 }
 
 public final class MKProgress {

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import NVActivityIndicatorView
 class MKProgressViewController: UIViewController {
 
     var background: MKProgressBackgroundView = {
@@ -28,6 +28,12 @@ class MKProgressViewController: UIViewController {
         return rotationView
     }()
     
+    var customNVActivityInicator: NVActivityIndicatorView! {
+        let customNVActivity = NVActivityIndicatorView(frame:  CGRect(x: 0, y: 0, width: 40, height:40), type: MKProgress.config.nvIndicatorType, color:MKProgress.config.nvIndicatorColor)
+        rotationView.translatesAutoresizingMaskIntoConstraints = false
+
+        return customNVActivity
+    }
     internal override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +58,12 @@ class MKProgressViewController: UIViewController {
         case .radial:
             background.addSubview(rotationView)
             self.setupConstraint(rotationView)
+            
+        case .nvActivityIndicator:
+            background.addSubview(rotationView)
+            background.addSubview(customNVActivityInicator)
+             self.setupConstraint(rotationView)
+            
         }
     }
     
@@ -72,6 +84,8 @@ class MKProgressViewController: UIViewController {
             self.indicator.stopAnimation()
         case .radial:
             self.rotationView.stopAnimation()
+        case .nvActivityIndicator:
+            self.customNVActivityInicator.stopAnimating()
         }
     }
     

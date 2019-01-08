@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import NVActivityIndicatorView
 public struct MKConfig {
     
     /**
@@ -89,6 +89,18 @@ public struct MKConfig {
      - Default: .radial
      */
     public var hudType: HudType = .radial
+    
+    /**
+     - NVActivityIndicator type
+     - Default: .ballPulseSync
+     */
+    public var nvIndicatorType: NVActivityIndicatorType = .ballPulseSync
+    
+    /**
+     - NVActivityIndicator color
+     - Default: .gray
+     */
+    public var nvIndicatorColor: UIColor = .gray
     
     /**
      - Rotating circle radius(minimum should be HUD width/2)
